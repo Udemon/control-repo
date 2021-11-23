@@ -1,0 +1,13 @@
+---
+version: 5
+
+hierarchy:
+  - name: "Encrypted hiera data"
+    lookup_key: eyaml_lookup_key
+    paths:
+      - "nodes/%{trusted.certnme}.yaml"
+      - "os/%{facts.os.family}.yaml"
+      - "common.yaml"
+    options:
+      pkcs7_private_key: /etc/puppetlabs/puppet/keyaml/prvkey.pkcs7.pem
+      pkcs7_public_key: /etc/puppetlabs/puppet/keyaml/pubkey.pkcs7.pem
