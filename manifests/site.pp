@@ -3,4 +3,5 @@ node puppet.local {
   file {'/etc/secpwd.txt':
     ensure => file,
     content => lookup('secret'),
+  }
 }
